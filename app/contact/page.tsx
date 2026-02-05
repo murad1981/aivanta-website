@@ -7,8 +7,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@aivanta.com',
-    href: 'mailto:hello@aivanta.com',
+    value: 'hello@theaivanta.com',
+    href: 'mailto:hello@theaivanta.com',
   },
   {
     icon: MapPin,

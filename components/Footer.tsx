@@ -80,8 +80,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-center gap-2 text-gray-400 text-sm">
                 <Mail className="h-4 w-4 text-[#0066FF]" />
-                <a href="mailto:hello@aivanta.com" className="hover:text-white transition-colors">
-                  hello@aivanta.com
+                <a href="mailto:hello@theaivanta.com" className="hover:text-white transition-colors">
+                  hello@theaivanta.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-gray-400 text-sm">
