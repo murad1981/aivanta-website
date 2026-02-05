@@ -26,40 +26,19 @@ const values = [
 
 const team = [
   {
-    name: 'Alex Thompson',
-    role: 'CEO & Co-Founder',
-    bio: 'Former AI researcher with 15+ years in machine learning and enterprise software.',
-    linkedin: '#',
-    twitter: '#',
-  },
-  {
-    name: 'Sarah Kim',
-    role: 'CTO & Co-Founder',
-    bio: 'Ex-Google engineer specializing in natural language processing and conversational AI.',
-    linkedin: '#',
-    twitter: '#',
-  },
-  {
-    name: 'Marcus Johnson',
-    role: 'Head of Engineering',
-    bio: 'Full-stack architect with expertise in scalable AI systems and cloud infrastructure.',
-    linkedin: '#',
-    twitter: '#',
-  },
-  {
-    name: 'Elena Rodriguez',
-    role: 'Head of Client Success',
-    bio: 'Customer experience leader focused on ensuring every client achieves their AI goals.',
-    linkedin: '#',
-    twitter: '#',
+    name: 'Murad Esheilah',
+    role: 'Founder',
+    bio: 'AI enthusiast and entrepreneur passionate about building intelligent solutions that transform businesses.',
+    linkedin: 'https://www.linkedin.com/in/muradjamal/',
+    twitter: 'https://x.com/muradjamal1981',
   },
 ];
 
 const stats = [
-  { value: '2020', label: 'Founded' },
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '30+', label: 'Happy Clients' },
-  { value: '15', label: 'Team Members' },
+  { value: '2024', label: 'Founded' },
+  { value: '10+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Happy Clients' },
+  { value: '99%', label: 'Client Satisfaction' },
 ];
 
 export default function AboutPage() {
@@ -72,7 +51,7 @@ export default function AboutPage() {
             About Aivanta
           </h1>
           <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-            We&apos;re a team of AI experts passionate about helping businesses harness the power of artificial intelligence.
+            Passionate about helping businesses harness the power of artificial intelligence.
           </p>
         </div>
       </section>
@@ -159,14 +138,14 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] dark:text-white">
-              Meet Our Team
+              Meet the Founder
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Experienced professionals dedicated to your success
+              Dedicated to helping businesses succeed with AI
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-16 flex justify-center">
             {team.map((member) => (
               <div
                 key={member.name}
