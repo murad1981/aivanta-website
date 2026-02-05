@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Bot, Cpu, MessageSquare, Lightbulb, ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { Bot, Cpu, MessageSquare, Lightbulb, ArrowRight, CheckCircle, Zap, Shield, Clock } from 'lucide-react';
 
 const services = [
   {
@@ -28,24 +28,21 @@ const features = [
   'Continuous learning and improvement',
 ];
 
-const testimonials = [
+const technologies = [
   {
-    quote: "Aivanta's chatbot reduced our support tickets by 60% while improving customer satisfaction scores.",
-    author: 'Sarah Chen',
-    role: 'VP of Operations',
-    company: 'TechFlow Inc.',
+    icon: Zap,
+    title: 'Latest AI Models',
+    description: 'Powered by cutting-edge language models and machine learning algorithms.',
   },
   {
-    quote: "The custom AI agent they built handles our data processing in minutes instead of days. Game changer.",
-    author: 'Michael Rodriguez',
-    role: 'CTO',
-    company: 'DataStream Solutions',
+    icon: Shield,
+    title: 'Enterprise Security',
+    description: 'Built with security-first architecture and data privacy compliance.',
   },
   {
-    quote: "Their consulting helped us develop a clear AI roadmap. We went from confused to confident in weeks.",
-    author: 'Emily Watson',
-    role: 'CEO',
-    company: 'NextGen Retail',
+    icon: Clock,
+    title: 'Rapid Deployment',
+    description: 'From concept to production in weeks, not months.',
   },
 ];
 
@@ -80,10 +77,10 @@ export default function Home() {
           {/* Stats */}
           <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: '50+', label: 'AI Solutions Deployed' },
               { value: '99.9%', label: 'Uptime Guarantee' },
               { value: '60%', label: 'Avg. Cost Reduction' },
               { value: '24/7', label: 'Support Available' },
+              { value: '<2 Weeks', label: 'Time to Deploy' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl sm:text-4xl font-bold text-[#00D4FF]">{stat.value}</div>
@@ -183,40 +180,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Technology Section */}
       <section className="py-20 sm:py-28 bg-gray-50 dark:bg-[#0f0f1a]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a2e] dark:text-white">
-              What Our Clients Say
+              Built with Modern Technology
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              Trusted by innovative companies worldwide
+              Leveraging the latest advancements in AI
             </p>
           </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
+            {technologies.map((tech) => (
               <div
-                key={testimonial.author}
-                className="bg-white dark:bg-[#1a1a2e] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800"
+                key={tech.title}
+                className="bg-white dark:bg-[#1a1a2e] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 text-center"
               >
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                  ))}
+                <div className="w-14 h-14 mx-auto rounded-xl bg-[#0066FF]/10 flex items-center justify-center">
+                  <tech.icon className="h-7 w-7 text-[#0066FF]" />
                 </div>
-                <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-                  &quot;{testimonial.quote}&quot;
+                <h3 className="mt-6 text-xl font-semibold text-[#1a1a2e] dark:text-white">
+                  {tech.title}
+                </h3>
+                <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {tech.description}
                 </p>
-                <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
-                  <div className="font-semibold text-[#1a1a2e] dark:text-white">
-                    {testimonial.author}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                </div>
               </div>
             ))}
           </div>

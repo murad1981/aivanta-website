@@ -13,7 +13,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Riyadh, Saudi Arabia',
     href: '#',
   },
 ];
@@ -263,7 +263,7 @@ export default function ContactPage() {
             <div className="text-center">
               <MapPin className="h-12 w-12 text-[#0066FF] mx-auto" />
               <p className="mt-4 text-gray-600 dark:text-gray-400">
-                San Francisco, California
+                Riyadh, Saudi Arabia
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-500">
                 Map placeholder - Add your preferred map integration
