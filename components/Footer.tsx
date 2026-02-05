@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Bot, Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Bot, Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const navigation = {
   solutions: [
@@ -15,7 +15,6 @@ const navigation = {
   social: [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/muradjamal/', icon: Linkedin },
     { name: 'Twitter', href: 'https://x.com/muradjamal1981', icon: Twitter },
-    { name: 'GitHub', href: '#', icon: Github },
   ],
 };
 
