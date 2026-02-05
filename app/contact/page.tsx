@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -9,12 +9,6 @@ const contactInfo = [
     title: 'Email',
     value: 'hello@aivanta.com',
     href: 'mailto:hello@aivanta.com',
-  },
-  {
-    icon: Phone,
-    title: 'Phone',
-    value: '+1 (234) 567-890',
-    href: 'tel:+1234567890',
   },
   {
     icon: MapPin,

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Bot, Mail, MapPin, Phone, Linkedin, Twitter, Github } from 'lucide-react';
+import { Bot, Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 
 const navigation = {
   solutions: [
@@ -13,8 +13,8 @@ const navigation = {
     { name: 'Contact', href: '/contact' },
   ],
   social: [
-    { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/muradjamal/', icon: Linkedin },
+    { name: 'Twitter', href: 'https://x.com/muradjamal1981', icon: Twitter },
     { name: 'GitHub', href: '#', icon: Github },
   ],
 };
@@ -83,12 +83,6 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-[#0066FF]" />
                 <a href="mailto:hello@aivanta.com" className="hover:text-white transition-colors">
                   hello@aivanta.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2 text-gray-400 text-sm">
-                <Phone className="h-4 w-4 text-[#0066FF]" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors">
-                  +1 (234) 567-890
                 </a>
               </li>
               <li className="flex items-start gap-2 text-gray-400 text-sm">
