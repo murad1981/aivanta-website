@@ -7,8 +7,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@theaivanta.com',
-    href: 'mailto:hello@theaivanta.com',
+    value: 'info@theaivanta.com',
+    href: 'mailto:info@theaivanta.com',
   },
   {
     icon: MapPin,
@@ -35,16 +35,40 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormState({
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: '',
+        });
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Something went wrong. Please try again.');
+    }
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -106,7 +130,7 @@ export default function ContactPage() {
                   Office Hours
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                  Monday - Friday: 9:00 AM - 6:00 PM PST
+                  Sunday - Thursday: 9:00 AM - 6:00 PM (AST)
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Weekend: By appointment
@@ -131,13 +155,6 @@ export default function ContactPage() {
                     <button
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormState({
-                          name: '',
-                          email: '',
-                          company: '',
-                          service: '',
-                          message: '',
-                        });
                       }}
                       className="mt-6 text-[#0066FF] font-medium hover:underline"
                     >
@@ -145,7 +162,28 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
+                    {/* Hidden fields for Netlify */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p className="hidden">
+                      <label>
+                        Don&apos;t fill this out: <input name="bot-field" />
+                      </label>
+                    </p>
+
+                    {error && (
+                      <div className="p-4 bg-red-50 text-red-600 rounded-lg text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-[#1a1a2e] dark:text-white mb-2">
