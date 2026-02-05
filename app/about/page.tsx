@@ -28,7 +28,7 @@ const team = [
   {
     name: 'Murad Esheilah',
     role: 'Founder',
-    bio: 'AI enthusiast and entrepreneur passionate about building intelligent solutions that transform businesses.',
+    bio: 'AI enthusiast and entrepreneur passionate about building intelligent solutions that transform businesses.\n\nDedicated to helping companies leverage cutting-edge AI technology to automate operations, enhance customer experiences, and drive growth.',
     linkedin: 'https://www.linkedin.com/in/muradjamal/',
     twitter: 'https://x.com/muradjamal1981',
   },
@@ -149,7 +149,7 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white dark:bg-[#1a1a2e] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 text-center"
+                className="bg-white dark:bg-[#1a1a2e] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 text-center max-w-md"
               >
                 <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#0066FF] to-[#00D4FF] flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">
@@ -160,7 +160,7 @@ export default function AboutPage() {
                   {member.name}
                 </h3>
                 <p className="text-[#0066FF] text-sm font-medium">{member.role}</p>
-                <p className="mt-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <p className="mt-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed whitespace-pre-line">
                   {member.bio}
                 </p>
                 <div className="mt-4 flex justify-center gap-3">
