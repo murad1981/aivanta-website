@@ -34,12 +34,6 @@ const team = [
   },
 ];
 
-const stats = [
-  { value: '2024', label: 'Founded' },
-  { value: '10+', label: 'Projects Delivered' },
-  { value: '10+', label: 'Happy Clients' },
-  { value: '99%', label: 'Client Satisfaction' },
-];
 
 export default function AboutPage() {
   return (
@@ -86,19 +80,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50 dark:bg-[#0f0f1a]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-4xl sm:text-5xl font-bold text-[#0066FF]">{stat.value}</div>
-                <div className="mt-2 text-gray-600 dark:text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Values Section */}
       <section className="py-20 sm:py-28">
@@ -195,7 +176,7 @@ export default function AboutPage() {
               Ready to Work Together?
             </h2>
             <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              Join the growing list of businesses transforming with Aivanta&apos;s AI solutions.
+              Let&apos;s discuss how AI can transform your business operations.
             </p>
             <div className="mt-8">
               <Link
