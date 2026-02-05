@@ -256,22 +256,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (placeholder) */}
-      <section className="pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="h-80 bg-gray-100 dark:bg-[#1a1a2e] rounded-2xl flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="h-12 w-12 text-[#0066FF] mx-auto" />
-              <p className="mt-4 text-gray-600 dark:text-gray-400">
-                Riyadh, Saudi Arabia
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-500">
-                Map placeholder - Add your preferred map integration
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

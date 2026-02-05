@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Target, Eye, Heart, Zap, Users, Award, ArrowRight, Linkedin, Twitter } from 'lucide-react';
 
 const values = [
@@ -132,10 +133,14 @@ export default function AboutPage() {
                 key={member.name}
                 className="bg-white dark:bg-[#1a1a2e] rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 text-center max-w-md"
               >
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#0066FF] to-[#00D4FF] flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden ring-4 ring-[#0066FF]/20">
+                  <Image
+                    src="/murad.png"
+                    alt={member.name}
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-[#1a1a2e] dark:text-white">
                   {member.name}
